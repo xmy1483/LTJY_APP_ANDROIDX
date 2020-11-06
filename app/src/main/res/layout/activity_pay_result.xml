@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/txt_title"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/weex_pay_result"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:gravity="center"
+        android:text="@string/weex_complete"
+        android:onClick="onConfirmClick"
+        android:textColor="@color/white"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@mipmap/back_arrow"
+        app:layout_constraintTop_toTopOf="@id/txt_title"
+        app:layout_constraintBottom_toBottomOf="@id/txt_title"
+        android:layout_width="31dp"
+        android:layout_height="50dp"/>
+
+    <ImageView
+        android:contentDescription="@string/weex_card_no"
+        android:id="@+id/img_succ"
+        android:src="@mipmap/oil_recharege_success"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="75dp"
+        android:layout_height="75dp"/>
+
+    <TextView
+        android:id="@+id/txt_succ"
+        android:textColor="#353434"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:text="@string/weex_pay_result"
+        app:layout_constraintTop_toBottomOf="@id/img_succ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="17sp"
+        android:id="@+id/txt_info"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_succ"
+        android:text="@string/weex_order_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="17sp"
+        android:id="@+id/field_info"
+        app:layout_constraintTop_toTopOf="@id/txt_info"
+        app:layout_constraintBottom_toBottomOf="@id/txt_info"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_marginTop="4dp"
+        android:id="@+id/m_line_1"
+        app:layout_constraintTop_toBottomOf="@+id/txt_info"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"/>
+
+    <TextView
+        android:textSize="17sp"
+        android:id="@+id/txt_cn"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/m_line_1"
+        android:text="@string/weex_card_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="17sp"
+        android:id="@+id/field_card_no"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txt_cn"
+        app:layout_constraintBottom_toBottomOf="@id/txt_cn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:onClick="onConfirmClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_goneMarginRight="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:text="@string/weex_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:elevation="@dimen/dp_0">
+
+            <com.bac.bacplatform.view.RatioLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll"
+                app:picRatio="2.4"
+                app:relative="width">
+
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></com.bigkoo.convenientbanner.ConvenientBanner>
+
+            </com.bac.bacplatform.view.RatioLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--loc-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14dp"
+                        android:text="投保城市定位" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_insurance_home_loc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_insurance_home_loc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+
+                            android:textColor="@color/colorPrimary" />
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="8dp"
+                            android:src="@mipmap/insurance_location" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!--label_1-->
+                <LinearLayout style="@style/insurance_container"
+
+                    >
+
+                    <TextView
+
+                        style="@style/insurance_left_textview"
+                        android:text="车辆牌照" />
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/black"
+
+                        android:textSize="17sp" />
+
+                    <com.bac.bacplatform.view.CanClearEditText
+                        android:id="@+id/et_insurance_home_card_num"
+                        style="@style/insurance_edittext"
+                        android:hint="请输入车牌号码"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="6" />
+
+                    <Switch
+                        android:id="@+id/switch_insurance_home_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="未上牌 "
+                        android:textColor="@color/gray_8f"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+                </LinearLayout>
+                <!--label_2-->
+                <LinearLayout style="@style/insurance_container">
+
+                    <TextView
+                        style="@style/insurance_left_textview"
+                        android:text="车主姓名" />
+
+                    <com.bac.bacplatform.view.CanClearEditText
+                        android:id="@+id/et_insurance_home_card_name"
+                        style="@style/insurance_edittext"
+                        android:hint="请输入姓名"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/insurance_container">
+
+                    <TextView
+                        style="@style/insurance_left_textview"
+                        android:text="车主身份证" />
+
+                    <com.bac.bacplatform.view.CanClearEditText
+                        android:id="@+id/et_insurance_home_card_id"
+                        style="@style/insurance_edittext"
+                        android:hint="请输入身份证"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="18" />
+
+                </LinearLayout>
+
+                <LinearLayout style="@style/insurance_container"
+android:id="@+id/chejiahao"
+                    >
+
+                    <TextView
+                        style="@style/insurance_left_textview"
+                        android:text="车辆车架号" />
+
+                    <com.bac.bacplatform.view.CanClearEditText
+                        android:id="@+id/ccet_05"
+                        style="@style/insurance_edittext"
+                        android:hint="请输入车辆车架号"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:maxLength="17" />
+
+                </LinearLayout>
+
+                <!--label_3-->
+                <LinearLayout
+                    style="@style/insurance_container"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        style="@style/insurance_left_textview"
+                        android:text="过户车辆"
+                        android:textColor="@color/gray_8f" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <Switch
+                        android:id="@+id/switch_insurance_home_car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!--label_4-->
+                <LinearLayout
+                    android:id="@+id/ll_insurance_home_label_4"
+                    style="@style/insurance_container"
+                    android:visibility="gone">
+
+                    <TextView
+
+                        style="@style/insurance_left_textview"
+
+                        android:text="过户日期" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_insurance_home_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_insurance_home_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="请选择"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/gray_cc"
+                            android:textSize="17sp" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/cb_insurance_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:checked="true"
+                        android:text="理解并接受"
+                        android:textColor="@color/gray_8f" />
+
+                    <TextView
+                        android:id="@+id/tv_insurance_home_deal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="《骆驼加油车险服务协议》"
+                        android:textColor="@color/gray_8f" />
+                </LinearLayout>
+
+                <Button
+
+                    android:id="@+id/btn_insurance_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/btn_selector"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tv_insurance_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.dxf.grpc.method";
+option java_outer_classname = "MethodProto";
+option objc_class_prefix = "HLW";
+
+package method;
+
+
+service Method {
+    rpc service (Request) returns (Response) {
+    }
+}
+
+message Request {
+    string AES = 1;
+    string JSON = 2;
+    string ID = 3;
+    string SIGN = 4;
+    string TOKEN = 5;
+    int32 COUNT = 6;
+}
+
+message Response {
+    string AES = 1;
+    string JSON = 2;
+    string ID = 3;
+    string SIGN = 4;
+    string TOKEN = 5;
+    int32 COUNT = 6;
+    string MSG = 7;
+    int32 ERROR = 8;
+}

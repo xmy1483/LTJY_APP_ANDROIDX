@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+             android:layout_width="match_parent"
+
+             android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <!--左侧-->
+            <LinearLayout
+                android:id="@+id/ll_left_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <!--金额-->
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_card_type_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:background="#ee0000"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="3dp"
+
+                        android:textColor="#fff"
+                        android:textSize="12sp"/>
+
+                    <ImageView
+                        android:id="@+id/iv_card_active"
+                        android:layout_width="match_parent"
+                        android:layout_height="34dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_rmb"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¥"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_card_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+
+                            android:textColor="@color/black"
+                            android:textSize="32sp"
+                            />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0.5dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/gray_cc"/>
+
+                <!--content-->
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:paddingLeft="12dp">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical"
+                        android:paddingBottom="4dp"
+                        android:paddingTop="4dp"
+                        >
+
+                        <TextView
+                            android:id="@+id/tv_card_type"
+                            android:layout_width="wrap_content"
+
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingBottom="4dp"
+                            android:paddingTop="4dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tv_card_use"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="有效期:"
+                                android:textColor="@color/gray_8f"
+                                />
+
+                            <TextView
+                                android:id="@+id/tv_card_use_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:textColor="@color/tomato"/>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tv_card_recharge"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/gray_8f"/>
+
+                        <TextView
+                            android:id="@+id/tv_card_recharge_next"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2.此卷仅限骆驼加油使用"
+                            android:textColor="@color/gray_cc"
+                            android:visibility="gone"/>
+
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <!-- 右侧按钮-->
+            <LinearLayout
+                android:id="@+id/ll_card_select"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+
+                    android:id="@+id/iv_card_select"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/card_selected_selector"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_card_click_can"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="#1d57fd"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="立即"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="使用"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_card_click_unactive"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:background="#ee0000"
+                android:gravity="center"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="立即"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="激活"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</FrameLayout>

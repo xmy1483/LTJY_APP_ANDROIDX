@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+
+
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode 1
+        versionName "1"
+
+        ndk{
+            abiFilters "x86"
+            abiFilters "armeabi"
+        }
+    }
+
+    buildTypes {
+        release {
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            //shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    resourcePrefix "cl_"
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    buildToolsVersion '28.0.3'
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    // 微信
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    // banner
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.15'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.bigkoo:convenientbanner:2.0.5'
+    compile 'com.alibaba:fastjson:1.2.0'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    compile 'org.bouncycastle:bcprov-jdk15on:1.47'
+    compile files('libs/alipaySdk-20161222.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/RootTools.jar')
+    compile project(':fit7')
+    compile files('libs/ObuSDK_JiangSu_TXB2_84174f19_20180525.jar')
+}

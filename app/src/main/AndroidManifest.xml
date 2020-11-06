@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.bac.bacplatform">
+
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 用于读取手机当前的状态 -->
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <!-- 获取手机标识码 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 网络请求 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 摄像头 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 通过WiFi或移动基站的方式获取用户错略的经纬度信息，定位精度大概误差在30~1500米 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 打电话的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- 手机网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--android 9.0上使用前台服务，需要添加权限-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+
+
+
+    <application
+        android:name=".BacApplication"
+        android:icon="${APP_ICON}"
+        android:label="${APP_NAME}"
+        android:roundIcon="${APP_ROUND_ICON}"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:resizeableActivity = "true"
+
+        android:theme="@style/AppTheme"
+        tools:replace="         android:label,         android:theme,         android:icon,         android:roundIcon">
+        <!--android 9.0加的-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1"/>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <!-- splash -->
+
+        <activity android:name=".module.splash.SplashActivity2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- loading -->
+        <activity android:name=".module.splash.LoadingActivity" />
+
+        <!-- login -->
+        <activity
+            android:name=".module.login.LoginActivity"
+            android:launchMode="singleTask" />
+
+        <activity android:name=".view.PolicyActivity" />
+        <activity android:name=".view.CommonWebView" />
+
+        <!-- main -->
+        <activity
+            android:name=".module.main.MainActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="com.vrphogame.thyroidapp0716.ACTION_START" />
+
+                <category android:name="com.vrphogame.thyroidapp0716.MAIN_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".module.main.MainActivityAutomatic" />
+
+        <!-- kaiyoubao -->
+        <activity android:name=".module.kaiyoubao.KaiYouBaoActivity" />
+        <activity android:name=".module.kaiyoubao.KaiYouBaoCostActivity" />
+
+        <!-- user_center -->
+        <activity android:name=".module.center.UserCenterActivity" />
+        <activity android:name=".module.center.UserCenterDetailActivity" />
+        <activity android:name=".module.center.MypswActivity" />
+        <activity android:name=".module.center.SetMypswActivity">
+            <intent-filter>
+                <action android:name="com.vrphogame.thyroidapp0716.ACTION_START" />
+
+                <category android:name="com.vrphogame.thyroidapp0716.SETMESSAGE_ACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".module.center.UpdatepswActivity" />
+        <!-- recharge -->
+        <activity android:name=".module.recharge.OilVoucherActivity" />
+        <activity android:name=".module.recharge.OilVoucherActivity2" />
+        <activity android:name=".module.recharge.OilRechargeResultActivity" />
+        <activity android:name=".old.module.phone.PhoneRechargeResultActivity" />
+
+        <!-- old.............................................................. -->
+
+
+        <!-- 账单 -->
+        <activity android:name=".module.bills.BillsMoreActivity" />
+        <activity android:name=".module.bills.QueryPhoneActivity" />
+        <activity android:name=".module.bills.QueryFlowActivity" />
+        <activity android:name=".module.bills.QueryOilActivity" />
+        <activity android:name=".module.bills.QueryKaiYouBaoActivity" />
+        <activity android:name=".module.bills.QueryExchangeDetailActivity" />
+        <activity android:name=".module.bills.QueryInsuranceAccount" />
+
+        <!-- bihupapa -->
+        <activity android:name=".old.module.bihupapa.CarAdvCaptureSample" />
+        <activity android:name=".old.module.bihupapa.CarAdvCollectActivity" />
+        <activity android:name=".old.module.bihupapa.CarAdvHomeActivity" />
+        <activity android:name=".old.module.bihupapa.QueryCarAdvInfoActivity" />
+        <!-- 保险 -->
+
+        <activity android:name=".old.module.cards.ActivityCardInsurance" />
+        <activity android:name=".old.module.cards.ActivityCardInsuranceDetail" />
+        <activity android:name=".old.module.insurance.InsuranceSplash" />
+        <activity
+            android:name=".old.module.insurance.InsuranceHomeActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".old.module.insurance.InsuranceQuerySuccess"
+            android:launchMode="singleTask" />
+        <activity android:name=".old.module.insurance.InsuranceCity" />
+        <activity
+            android:name=".old.module.insurance.InsuranceChooseCar2"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".old.module.insurance.InsuranceQueryFail"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".old.module.insurance.InsuranceChoosePlan"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".old.module.insurance.InsuranceAlter4"
+            android:launchMode="singleTask" />
+        <activity android:name=".old.module.insurance.InsuranceChooseComp3" />
+        <activity android:name=".old.module.insurance.InsuranceQueryCost3" />
+        <activity android:name=".old.module.insurance.InsuranceDetailActivity2" />
+        <activity android:name=".old.module.insurance.InsuranceUploadAddress" />
+        <activity android:name=".old.module.insurance.InsuranceQueryVideo" />
+
+        <!-- 话费直充 -->
+        <activity
+            android:name=".old.module.phone.ActivityPhone1"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".old.module.phone.ActivityPhone" />
+        <!-- 券首页 -->
+        <activity android:name=".old.module.cards.ActivityCardsHome" />
+        <activity android:name=".old.module.cards.ActivityCardsPhone" />
+        <activity android:name=".old.module.cards.CouponActiveActivity" />
+
+        <!-- exchange -->
+        <activity
+            android:name=".old.module.exchange.ExchangeHomeActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".old.module.exchange.ExchangeMsgActivity" />
+        <activity android:name=".old.module.exchange.ExchangeResultActivity" />
+        <!-- 洗车 -->
+        <activity android:name=".old.module.wash.WashCarActivity" />
+
+        <!-- hybrid -->
+        <activity android:name=".old.module.hybrid.WebAdvActivity" />
+        <activity android:name=".old.module.hybrid.WebAdvActivity2" />
+        <activity android:name=".old.module.hybrid.WebAdvActivity3" />
+        <activity android:name=".old.module.hybrid.WebNobarActivity" />
+
+        <!-- 优惠码 -->
+        <activity android:name=".old.module.preferential.PreferentialActivity" />
+
+        <!-- 办卡 -->
+
+        <activity android:name=".old.module.order.OrderSplashActivity" />
+        <activity android:name=".old.module.order.OrderHomeActivity" />
+        <activity android:name=".old.module.order.OrderUploadActivity2" />
+        <activity android:name=".old.module.order.DeliverCostActivity" />
+        <activity android:name=".old.module.order.QueryOrderInfoActivity" />
+
+        <!-- 流量 -->
+        <activity
+            android:name=".old.module.flow.FlowHomeActivity"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- camera -->
+        <activity android:name=".view.camera.CaptureActivity2" />
+        <activity android:name=".view.capture.CaptureActivity3" />
+
+        <!-- 支付宝 -->
+        <activity android:name=".old.module.hybrid.ZhiFuBaoActivity" />
+
+        <!-- 支付宝 -->
+        <activity android:name="com.bac.bihupapa.activity.ZhiFuBaoActivity" />
+        <activity android:name=".module.main.view.BaseActivity" />
+
+        <!-- 微信支付 -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true" />
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"/>
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar" -->
+
+        <!-- 更多 -->
+        <activity android:name=".old.module.more.HomeMoreActivity" />
+
+        <!-- 测试 -->
+        <activity android:name=".tst.WeexUrlTestActivity" />
+        <activity android:name=".tst.BaiduLocationActivity" />
+        <activity android:name=".tst._ClazzBuildActivity" />
+        <activity android:name=".tst._7FileProviderActivity" />
+        <activity android:name=".tst.KeyboardActivity" />
+        <activity android:name=".tst.Http2Activity" />
+        <!-- 下载 -->
+        <service android:name=".service.DownService" />
+
+        <!-- phoneParam -->
+        <service android:name=".service.SecureService" />
+
+        <activity android:name=".old.module.hybrid.AboutUsActivity" />
+        <activity android:name="com.wjz.weexlib.weex.activity.WeexActivity2">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="com.alibaba.weex.protocol.openurl" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.taobao.android.intent.category.WEEX" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:scheme="file" />
+                <data android:scheme="bac" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".module.center.BalanceActivity" />
+        <activity
+            android:name=".module.main.view.jinYi" />
+        <service  android:name="com.genvict.bluetooth.manage.BlueToothService"
+            android:enabled="true" />
+
+        <activity android:name=".weex_activities.WeexOilRechargeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".weex_activities.GenericWeexActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".weex_activities.PayResultPage" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.homemsg.HomeMsgActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.expressprogress.ExpressActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.expressorder.OrderRecordActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.orderdetail.OrderDetailActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name="io.flutter.embedding.android.FlutterActivity"
+            android:theme="@style/AppTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize" />
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2">
+        </meta-data>
+    </application>
+
+</manifest>

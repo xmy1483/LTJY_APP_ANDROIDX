@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_4"
+    android:layout_marginTop="@dimen/dp_4">
+
+    <TextView
+        android:id="@+id/tv_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_4"
+        android:layout_weight="1"
+        android:textSize="@dimen/sp_22"
+        tools:text="111111111111111111" />
+
+    <TextView
+        android:id="@+id/tv_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_01"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_8"
+        android:textSize="@dimen/sp_22"
+        tools:text="测试*测试" />
+
+
+    <TextView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:padding="@dimen/dp_8"
+        android:text="删除"
+        android:textSize="@dimen/sp_16" />
+
+</RelativeLayout>

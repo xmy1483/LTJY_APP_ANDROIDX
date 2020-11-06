@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="8dp"
+              android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/in_top_left"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@mipmap/in_top_mid"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:text="¥"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:id="@+id/tv_insurance_card_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="500"
+                    android:textColor="@color/white"
+                    android:textSize="28sp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_001"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:lineSpacingExtra="4dp"
+                android:text="车险抵用券\n仅限购买XXX车险\n仅限用于车险算价\n满X000可用"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/in_top_right"/>
+    </LinearLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/in_bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="6dp"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        android:paddingTop="6dp">
+
+        <TextView
+            android:id="@+id/tv_002"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016.10.30~2017.10.29"
+            android:textColor="@color/white"
+            />
+
+        <TextView
+            android:id="@+id/tv_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_002"
+            android:gravity="right|center_vertical"
+            android:text="查看详情"
+            android:textColor="@color/white"/>
+    </RelativeLayout>
+
+</LinearLayout>

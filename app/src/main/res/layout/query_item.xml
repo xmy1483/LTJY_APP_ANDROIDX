@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_33"
+        android:paddingTop="@dimen/dp_33">
+
+
+        <TextView
+            android:id="@+id/tv_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="4dp"
+            android:layout_centerInParent="true"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18" />
+        <TextView
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_below="@id/tv_01"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="4dp"
+            android:text="点击确认按钮查看"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_18" />
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <!--<TextView-->
+            <!--android:layout_margin="@dimen/dp_8"-->
+            <!--android:id="@+id/tv_02"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:gravity="center"-->
+            <!--android:paddingBottom="@dimen/dp_14"-->
+            <!--android:paddingTop="@dimen/dp_14"-->
+            <!--android:text="取消"-->
+            <!--android:background="@color/blue"-->
+            <!--android:textColor="@color/white"-->
+            <!--android:textSize="@dimen/sp_18" />-->
+        <TextView
+            android:layout_margin="@dimen/dp_8"
+            android:id="@+id/tv_03"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="@dimen/dp_14"
+            android:paddingTop="@dimen/dp_14"
+            android:text="确定"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_18" />
+
+    </LinearLayout>
+
+    </LinearLayout>

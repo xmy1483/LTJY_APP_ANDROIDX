@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.bac.bacplatform.module.center.BalanceActivity">
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:text="加油折扣卡余额查询"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="20dp"
+        android:textSize="@dimen/dp_22"
+        />
+<!--<view-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_marginLeft="20dp"-->
+    <!--android:layout_height="1dp"/>-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_48"
+    android:layout_margin="12dp"
+    android:background="@color/line"
+    android:orientation="horizontal">
+
+    <com.bac.bacplatform.view.CanClearEditText
+        android:id="@+id/ccet_01"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:background="@null"
+        android:drawableLeft="@mipmap/oil_ccet_left"
+        android:drawablePadding="@dimen/dp_8"
+        android:hint="@string/oil_ccet_hint"
+        android:inputType="number"
+        android:maxLength="19"
+        android:padding="@dimen/dp_14"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_18" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="选择\n油卡"
+        android:maxLines="2"
+        android:gravity="center"
+        android:layout_weight="1" />
+
+
+</LinearLayout>
+    <!--<view-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="1dp"/>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        >
+
+        <Button
+            android:id="@+id/btn_search"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/btn_selector"
+            android:layout_height="60dp"
+            android:text="查询"
+            android:textColor="@color/white"
+            android:textSize="22dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/line"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/text_show"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="加油折扣卡余额查询结果"
+            android:textSize="28dp" />
+
+        <LinearLayout
+            android:id="@+id/ln_1"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@id/text_show"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="加油卡卡号"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|right"
+                android:text=""/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_2"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@id/ln_1"
+            android:layout_marginTop="12dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="未圈存余额"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ln_3"
+            android:layout_marginTop="12dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@id/ln_2"
+            android:background="@color/white"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="已圈存余额"
+                android:layout_marginLeft="20dp"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/ln_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/text_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="查询结果非实时数据，更新时间"/>
+            <TextView
+                android:id="@+id/search_time"
+                android:layout_toRightOf="@id/text_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text=""/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

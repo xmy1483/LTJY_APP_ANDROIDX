@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:bac="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/shape_stroke_solid_corners_white"
+                >
+
+                <TextView
+                    android:id="@+id/tv_01"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_02"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="12dp"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_066"
+                    android:layout_below="@id/tv_01"
+                    android:background="@color/line"/>
+
+                <TextView
+                    android:id="@+id/tv_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_01"
+                    android:padding="12dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_04"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/tv_02"
+                    android:padding="12dp"
+                    />
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tv_05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:paddingLeft="4dp"
+                android:textSize="14sp"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray_8f"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:gravity="bottom"
+                    android:text="支付金额："
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_06"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥ 元"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+
+            <com.bac.bacplatform.view.PayView
+                android:id="@+id/pv_zhifubao"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
+                bac:imgView="@mipmap/zhifubao_icon"
+
+                bac:textStr="支付宝"
+                >
+            </com.bac.bacplatform.view.PayView>
+
+            <com.bac.bacplatform.view.PayView
+                android:id="@+id/pv_wechat"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                bac:imgView="@mipmap/weixin_icon"
+
+                bac:textStr="微信"
+                >
+            </com.bac.bacplatform.view.PayView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+   <include layout="@layout/layout_btn"/>
+</LinearLayout>

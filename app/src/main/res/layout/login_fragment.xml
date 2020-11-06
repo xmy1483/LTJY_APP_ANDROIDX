@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_gradient_bg"
+    tools:context=".module.login.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_login_alert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="@dimen/dp_48" />
+    <TextView
+        android:id="@+id/problem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="遇到问题？联系我们"
+        android:textColor="@color/white"
+        android:layout_marginBottom="110dp" />
+    <TextView
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:text="400-100-6262"
+        android:textColor="@color/white"
+        android:layout_marginBottom="90dp" />
+
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/dp_60"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/login_logo"
+            android:layout_width="@dimen/dp_150"
+            android:layout_height="@dimen/dp_150"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/login_center_logo" />
+
+        <LinearLayout
+            android:id="@+id/ll_center_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/login_logo"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_22"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <com.bac.bacplatform.view.CanClearEditText
+                android:id="@+id/ccet_login_01"
+                android:layout_width="match_parent"
+                android:inputType="number"
+                android:imeOptions="actionNext"
+                android:layout_height="@dimen/dp_48"
+                android:background="@android:color/white"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:paddingLeft="@dimen/dp_4"
+                android:paddingRight="@dimen/dp_4"
+                android:textSize="@dimen/sp_18" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_066"
+                android:background="@color/line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.bac.bacplatform.view.CanClearEditText
+                    android:id="@+id/ccet_login_02"
+                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/dp_48"
+                    android:layout_weight="1"
+                    android:textColor="@android:color/holo_green_light"
+                    android:background="@android:color/white"
+                    android:maxLength="4"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingRight="@dimen/dp_4"
+                    android:textSize="@dimen/sp_18" />
+
+                <Button
+                    android:id="@+id/btn_login_send_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/dp_4"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/login_begin_user_btn_selector"
+                    android:enabled="false"
+                    android:gravity="center"
+
+                    android:textColor="@android:color/white" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_login_user"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:layout_below="@id/ll_center_container"
+            android:layout_marginLeft="@dimen/dp_14"
+            android:layout_marginRight="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_22"
+            android:background="@drawable/login_begin_user_btn_selector"
+            android:enabled="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_18" />
+
+
+    </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

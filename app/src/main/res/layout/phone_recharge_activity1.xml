@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bac="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <!-- 内容-->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.bac.bacplatform.view.RatioLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                bac:picRatio="2.4"
+                bac:relative="width"
+                >
+
+                <ImageView
+                    android:id="@+id/iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </com.bac.bacplatform.view.RatioLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <com.bac.bacplatform.view.CanClearEditText
+                            android:id="@+id/phone_recharge_et"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_stroke_solid_corners_white"
+                            android:hint="请输入充值手机号"
+                            android:imeOptions="actionDone"
+                            android:inputType="number"
+                            android:maxLength="13"
+                            android:paddingRight="8dp"
+                            android:singleLine="true"
+                            android:textSize="22sp"/>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/phone_recharge_error_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/phone_recharge_error"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="4dp"
+                            android:text="请输入正确的手机号码"
+                            />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/phone_recharge_tv_000"
+                            style="@style/phone_recharge_button"
+                            android:text="10 元"/>
+
+                        <TextView
+                            android:id="@+id/phone_recharge_tv_100"
+                            style="@style/phone_recharge_button"
+                            android:text="30 元"/>
+
+                        <TextView
+                            android:id="@+id/phone_recharge_tv_200"
+                            style="@style/phone_recharge_button"
+                            android:text="50 元"/>
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/phone_recharge_tv_300"
+                            style="@style/phone_recharge_button"
+                            android:background="@mipmap/phone_button_shape"
+                            android:text="100 元"/>
+
+                        <TextView
+                            android:id="@+id/phone_recharge_tv_500"
+                            style="@style/phone_recharge_button"
+                            android:text="200 元"/>
+
+                        <TextView
+                            style="@style/phone_recharge_button"
+                            android:visibility="invisible"/>
+
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:background="@color/gray"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/phone_recharge_container_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="22dp"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="支付金额:"
+                            android:textColor="@color/gray"
+                            android:textSize="16sp"
+                            />
+
+                        <TextView
+                            android:id="@+id/phone_recharge_tv_cur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="¥0 元"
+                            android:textColor="@color/mediumturquoise"
+                            android:textSize="28sp"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/phone_recharge_container_money"
+
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <com.bac.bacplatform.view.PayView
+                            android:id="@+id/pv_kaiyoubao"
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="8dp"
+                            bac:imgView="@mipmap/kaiyoubao_icon"
+
+                            bac:textStr="揩油宝"
+                            >
+                        </com.bac.bacplatform.view.PayView>
+
+                        <com.bac.bacplatform.view.PayView
+                            android:id="@+id/pv_zhifubao"
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="8dp"
+                            bac:imgView="@mipmap/zhifubao_icon"
+
+                            bac:textStr="支付宝"
+                            >
+                        </com.bac.bacplatform.view.PayView>
+
+                        <com.bac.bacplatform.view.PayView
+                            android:id="@+id/pv_wechat"
+                            android:layout_width="match_parent"
+                            android:layout_height="42dp"
+                            android:layout_marginTop="8dp"
+                            bac:imgView="@mipmap/weixin_icon"
+
+                            bac:textStr="微信"
+                            >
+
+                        </com.bac.bacplatform.view.PayView>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <include layout="@layout/layout_btn"/>
+
+</LinearLayout>

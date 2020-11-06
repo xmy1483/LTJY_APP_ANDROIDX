@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode 1
+        versionName "1"
+
+    }
+    defaultConfig{
+        ndk{
+            abiFilters "x86"
+            abiFilters "armeabi"
+        }
+    }
+    buildTypes {
+        release {
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            // shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    resourcePrefix "wx_"
+    buildToolsVersion '28.0.3'
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    // weex
+    compile 'com.taobao.android:weex_sdk:0.17.0'
+
+    // weex sdk and fastjson
+//    implementation 'com.taobao.android:weex_sdk:0.20.0.2@aar'
+//    implementation 'com.alibaba:fastjson:1.1.46.android'
+
+
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.alibaba:fastjson:1.2.0'
+    compile project(':fit7')
+}

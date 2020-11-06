@@ -1,0 +1,7 @@
+include ':app', ':rxbaclib', ':bihupapa', ':commonlib', ':weexlib', ':bacinnermanager', ':fit7', ':libzxing'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  'flutter_md/.android/include_flutter.groovy'
+))
+

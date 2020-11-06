@@ -1,0 +1,89 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
+
+
+buildscript {
+
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0'
+        // classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+
+        //grpc
+        classpath "com.google.protobuf:protobuf-gradle-plugin:0.8.6"
+
+
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // Sdk and tools
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.1'
+    minSdkVersion = 19
+    targetSdkVersion = 28
+
+    // dependencies
+    supportLibraryVersion = '28.+'
+
+    // bac
+    bacVersionCode = 63
+    bacVersionName = "2.6.0611"
+    //2.6.0210
+
+
+    // bihupapa
+    bihupapaVersionCode = 1
+    bihupapaVersionName = "1.0"
+
+    // 加密
+    appKeySeed = "\"0\""
+    appKeySeed2= "\"0123456780123\""
+    appKeyMid="\"XYVW\""
+
+    // http windows环境 测试
+    debugUrl="\"http://intranet.camel.bac365.com/app.pay/\""
+//    debugUrl="\"http://192.168.1.200:20002/app.pay/\""
+
+    //生产地址
+    releaseUrl="\"https://app5.bac365.com:10443/app.pay/\""
+//    releaseUrl="\"http://192.168.1.200:20002/app.pay/\""
+
+    // linex环境
+    //releaseUrl="\"http://121.43.172.16:88/app.pay/\""
+    //生产测试地址1
+    //releaseUrl = "\"http://121.196.213.135:10080/app.pay/\""
+    //生产测试地址2
+//    releaseUrl = "\"http://121.43.176.11:10080/app.pay/\""
+//临时测试地址
+    //releaseUrl="\"http://my.aja6.com:20002/app.pay/\""
+//    releaseUrl="\"http://121.43.172.16:20002/app.pay/\""
+//    releaseUrl="\"http://121.43.176.11:10080/app.pay/\""
+
+    test = false
+
+    // bihupapaLib
+    bihupapaLib = true
+}

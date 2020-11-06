@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="请对照您的《车辆行驶证》填写信息"
+                android:textColor="@color/colorPrimary"/>
+
+            <!--label_1-->
+            <LinearLayout
+                style="@style/insurance_container"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                >
+
+                <TextView
+                    style="@style/insurance_left_textview_0"
+                    android:text="品牌型号"
+
+                    />
+
+                <TextView
+                    android:id="@+id/et_insurance_home_card_num"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:hint="请选择"
+                    android:paddingRight="4dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_cc"
+                    android:textSize="18sp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="0.25dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="提示"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="invisible"/>
+
+
+            </LinearLayout>
+            <!--label_2-->
+            <LinearLayout
+                style="@style/insurance_container"
+                >
+
+                <TextView
+                    style="@style/insurance_left_textview_0"
+                    android:text="车辆识别代码"
+                    />
+
+                <com.bac.bacplatform.view.CanClearEditText
+                    android:id="@+id/vin_code"
+                    style="@style/insurance_edittext_0"
+                    android:hint="请填写"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+
+                <TextView
+                    android:id="@+id/tv_alert_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="0.25dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="提示"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+            <!--label_3-->
+            <LinearLayout
+                style="@style/insurance_container"
+                >
+
+                <TextView
+                    style="@style/insurance_left_textview_0"
+                    android:text="发动机号码"
+                    />
+
+                <com.bac.bacplatform.view.CanClearEditText
+                    android:id="@+id/et_insurance_home_engine_id"
+                    style="@style/insurance_edittext_0"
+                    android:hint="请填写"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"/>
+
+                <TextView
+                    android:id="@+id/tv_alert_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="0.25dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="提示"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+
+            </LinearLayout>
+            <!--label_4-->
+            <LinearLayout
+                style="@style/insurance_container"
+                android:layout_marginTop="12dp"
+                >
+
+                <TextView
+                    style="@style/insurance_left_textview_0"
+                    android:text="注册时间"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_register_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:hint="请选择"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_cc"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/tv_alert_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="0.25dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="提示"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_new_car"
+                style="@style/insurance_container"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    style="@style/insurance_left_textview_0"
+                    android:text="新车发票价"
+                    />
+
+                <com.bac.bacplatform.view.CanClearEditText
+                    android:id="@+id/cet"
+                    style="@style/insurance_edittext_0"
+                    android:hint="请填写"
+                    android:imeOptions="actionNext"
+                    android:inputType="numberDecimal"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="0.25dp"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:text="提示"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="invisible"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="请填写其他投保信息"
+                android:textColor="@color/colorPrimary"/>
+
+            <!--label_5-->
+            <LinearLayout
+                style="@style/insurance_container"
+                >
+
+                <TextView
+                    style="@style/insurance_left_textview_0"
+                    android:text="车主姓名"
+                    />
+
+                <TextView
+                    android:id="@+id/et_insurance_home_engine_name"
+                    style="@style/insurance_edittext_0"
+                    />
+
+            </LinearLayout>
+            <!--label_6-->
+            <LinearLayout
+                style="@style/insurance_container"
+
+                >
+
+                <TextView
+                    style="@style/insurance_left_textview_0"
+                    android:text="车主身份证号"
+                    />
+
+                <TextView
+                    android:id="@+id/et_insurance_home_id"
+                    style="@style/insurance_edittext_0"
+                    />
+
+            </LinearLayout>
+            <!--label_6-->
+            <LinearLayout
+                style="@style/insurance_container"
+                >
+
+                <TextView
+                    style="@style/insurance_left_textview_0"
+                    android:text="车主手机号"
+                    />
+
+                <com.bac.bacplatform.view.CanClearEditText
+                    android:id="@+id/et_insurance_home_engine_phone"
+                    style="@style/insurance_edittext_0"
+                    android:hint="请填写"
+                    android:imeOptions="actionDone"
+                    android:inputType="phone"
+                    android:maxLength="11"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/btn_insurance_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_selector"
+        android:text="确认"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
+
+</LinearLayout>

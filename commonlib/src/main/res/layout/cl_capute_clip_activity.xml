@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="8dp"
+        android:background="#0085d0"
+        android:paddingBottom="@dimen/dp_4"
+        android:paddingTop="@dimen/dp_4"
+        android:text="裁   剪"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+</FrameLayout>

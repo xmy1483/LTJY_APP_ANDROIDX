@@ -1,0 +1,51 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+
+    package="com.bac.commonlib">
+    <!-- wifi-->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+
+    <application
+
+        android:supportsRtl="true">
+
+
+        <!--android 9.0-->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1"/>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+
+        <!-- clip-->
+        <activity android:name=".capture.ClipActivity" />
+
+        <activity android:name=".hybrid.WebViewHybrid"/>
+
+        <!-- 百度地图 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="p7okZklStXoyVjvfg5lcnPvcKzgG9UyB" />
+
+
+        <service android:name=".services.MoveAssertsService"/>
+
+
+    </application>
+
+</manifest>

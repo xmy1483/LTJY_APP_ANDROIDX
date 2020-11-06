@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="cl_RatioLayout">
+        <attr name="cl_picRatio" format="float"/>
+        <attr name="cl_relative">
+            <enum name="width" value="0"/>
+            <enum name="height" value="1"/>
+        </attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="cl_PayLayout">
+        <attr name="cl_imgView" format="reference"/>
+        <attr name="cl_textStr" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="cl_CircleProgressbar">
+        <attr name="cl_in_circle_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="cl_bacEditText">
+
+        <attr name="cl_maxCount" format="integer" />
+        <attr name="cl_circleColor" format="color" />
+        <attr name="cl_bottomLineColor" format="color" />
+        <attr name="cl_radius" format="dimension" />
+        <attr name="cl_divideLineWidth" format="dimension" />
+        <attr name="cl_divideLineColor" format="color" />
+        <attr name="cl_rectAngle" format="dimension" />
+        <attr name="cl_psw" format="boolean"/>
+        <attr name="cl_psdType" format="enum">
+            <enum name="cl_react" value="0" />
+            <enum name="cl_bottomLine" value="1" />
+        </attr>
+
+    </declare-styleable>
+
+</resources>

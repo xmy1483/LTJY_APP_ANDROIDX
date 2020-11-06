@@ -1,0 +1,131 @@
+Index: app/src/main/java/com/bac/bacplatform/Info.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/bac/bacplatform/Info.java	(revision )
++++ app/src/main/java/com/bac/bacplatform/Info.java	(revision )
+@@ -0,0 +1,123 @@
++package com.bac.bacplatform;
++
++/**
++ * Created by guke on 2017/9/13.
++ */
++
++public class Info {
++
++
++    /**
++     * car_license_no : 粤W3B1
++     * create_time : 1490523775000
++     * is_upload_address : true
++     * is_upload_image : false
++     * order_id : 1703261822265873911
++     * pay_money : 2022.0
++     * prv_id : 2011320199
++     * status : 2
++     * task_state : 2
++     * task_state_description : 报价失败
++     * total_premium : 2022.0
++     */
++
++    private String car_license_no;
++    private long create_time;
++    private boolean is_upload_address;
++    private boolean is_upload_image;
++    private long order_id;
++    private double pay_money;
++    private String prv_id;
++    private int status;
++    private int task_state;
++    private String task_state_description;
++    private double total_premium;
++
++    public String getCar_license_no() {
++        return car_license_no;
++    }
++
++    public void setCar_license_no(String car_license_no) {
++        this.car_license_no = car_license_no;
++    }
++
++    public long getCreate_time() {
++        return create_time;
++    }
++
++    public void setCreate_time(long create_time) {
++        this.create_time = create_time;
++    }
++
++    public boolean isIs_upload_address() {
++        return is_upload_address;
++    }
++
++    public void setIs_upload_address(boolean is_upload_address) {
++        this.is_upload_address = is_upload_address;
++    }
++
++    public boolean isIs_upload_image() {
++        return is_upload_image;
++    }
++
++    public void setIs_upload_image(boolean is_upload_image) {
++        this.is_upload_image = is_upload_image;
++    }
++
++    public long getOrder_id() {
++        return order_id;
++    }
++
++    public void setOrder_id(long order_id) {
++        this.order_id = order_id;
++    }
++
++    public double getPay_money() {
++        return pay_money;
++    }
++
++    public void setPay_money(double pay_money) {
++        this.pay_money = pay_money;
++    }
++
++    public String getPrv_id() {
++        return prv_id;
++    }
++
++    public void setPrv_id(String prv_id) {
++        this.prv_id = prv_id;
++    }
++
++    public int getStatus() {
++        return status;
++    }
++
++    public void setStatus(int status) {
++        this.status = status;
++    }
++
++    public int getTask_state() {
++        return task_state;
++    }
++
++    public void setTask_state(int task_state) {
++        this.task_state = task_state;
++    }
++
++    public String getTask_state_description() {
++        return task_state_description;
++    }
++
++    public void setTask_state_description(String task_state_description) {
++        this.task_state_description = task_state_description;
++    }
++
++    public double getTotal_premium() {
++        return total_premium;
++    }
++
++    public void setTotal_premium(double total_premium) {
++        this.total_premium = total_premium;
++    }
++}

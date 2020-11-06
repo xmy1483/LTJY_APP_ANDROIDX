@@ -1,0 +1,283 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:visibility="gone"
+        android:paddingStart="10dp"
+        android:paddingLeft="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/login_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@mipmap/title_icon"
+            android:drawableLeft="@mipmap/title_icon"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:contentDescription="@string/app_name"
+            android:id="@+id/img_msg"
+            android:src="@mipmap/ic_msg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"/>
+
+        <View
+            android:visibility="invisible"
+            android:id="@+id/msg_red_point"
+            app:layout_constraintVertical_bias="0.2"
+            app:layout_constraintHorizontal_bias="0.8"
+            app:layout_constraintTop_toTopOf="@+id/img_msg"
+            app:layout_constraintBottom_toBottomOf="@+id/img_msg"
+            app:layout_constraintEnd_toEndOf="@+id/img_msg"
+            app:layout_constraintStart_toStartOf="@id/img_msg"
+            android:background="@drawable/round_bg"
+            android:layout_width="9dp"
+            android:layout_height="9dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/blue_rect"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.bac.bacplatform.customview.BezierView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                app:layout_constraintTop_toBottomOf="@id/blue_rect" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/banner_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent">
+                <!--            banner-->
+                <com.bac.bacplatform.view.RatioLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll"
+                    app:picRatio="3"
+                    app:relative="width">
+
+
+                    <com.bigkoo.convenientbanner.ConvenientBanner
+                        android:id="@+id/banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </com.bigkoo.convenientbanner.ConvenientBanner>
+
+                </com.bac.bacplatform.view.RatioLayout>
+            </androidx.cardview.widget.CardView>
+            <!--            功能区-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/func_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/banner_container" />
+
+            <!--            消息区-->
+            <View
+                android:id="@+id/line_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="10dp"
+                android:background="#888888"
+                app:layout_constraintTop_toBottomOf="@+id/func_grid" />
+
+            <LinearLayout
+                android:id="@+id/txt_new_msg_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/line_1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最新"
+                    android:textColor="@color/light_blue"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/txt_new_msg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="暂无消息" />
+
+                <TextView
+                    android:id="@+id/txt_more_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/line_2"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/light_gray"
+                app:layout_constraintTop_toBottomOf="@+id/txt_new_msg_parent" />
+
+            <TextView
+                android:id="@+id/txt_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:padding="8dp"
+                android:text="精选优品"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_2" />
+
+            <TextView
+                android:id="@+id/txt_more_jd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/more"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/line_2" />
+            <View
+                android:id="@+id/line_3"
+                android:background="@color/light_gray"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_more_jd"
+                android:layout_height="1dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                app:layout_constraintTop_toBottomOf="@id/line_3"
+                android:id="@+id/msg_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <ScrollView
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--  更多-->
+            <TextView
+                android:id="@+id/mainpage_icon_all"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ln_home"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/line"
+                android:orientation="vertical"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                    <ImageView
+                        android:id="@+id/insurance_buy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/iv_one_key_oil_bak1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/iv_wash_car_bak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/mainpage_icon_sg_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/mainpage_icon_jd_card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/mainpage_icon_exchange_bak"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/mainpage_icon_phone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:id="@+id/mainpage_icon_flow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:id="@+id/mainpage_icon_all_bak"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_oil"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorPrimary"
+                    android:visibility="gone">
+                    <TextView
+                        android:id="@+id/text2_oil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textSize="18sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

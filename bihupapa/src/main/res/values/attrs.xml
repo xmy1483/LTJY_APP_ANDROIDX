@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RatioLayout">
+        <attr name="picRatio" format="float"/>
+        <attr name="relative">
+            <enum name="width" value="0"/>
+            <enum name="height" value="1"/>
+        </attr>
+
+    </declare-styleable>
+    
+    <declare-styleable name="PayLayout">
+        <attr name="imgView" format="reference"/>
+        <attr name="textStr" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleProgressbar">
+        <attr name="in_circle_color" format="color" />
+    </declare-styleable>
+</resources>

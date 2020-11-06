@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_toolbar_write" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="投保车辆"
+            android:textSize="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"/>
+
+    </LinearLayout>
+    <!-- 车牌号码-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="车牌号码"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/dp_22"
+            android:textColor="@color/black"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:background="@null"
+            android:layout_marginLeft="12dp"
+            android:hint="请输入投保车辆号码"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="20dp"
+        />
+    <!-- 车主姓名-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="车主姓名"
+            android:layout_marginLeft="20dp"
+            android:textSize="@dimen/dp_22"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:background="@null"
+            android:layout_marginLeft="12dp"
+            android:hint="请输入车主姓名"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginLeft="20dp"
+        />
+    <!-- 身份证号-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="身份证号"
+            android:layout_marginLeft="20dp"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/dp_22"
+            android:textColor="@color/black"
+            android:layout_height="match_parent" />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:background="@null"
+            android:layout_marginLeft="12dp"
+            android:hint="请输入车主18位身份证号码"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_insurance_offer"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:layout_marginRight="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_22"
+        android:text="确认"/>
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/blue</color>
+    <!--<color name="colorPrimaryDark">@color/blue</color>-->
+    <color name="colorAccent">@color/blue</color>
+
+    <color name="loginBg">#0b2148</color>
+
+    <color name="loginBg2">#1e4e7c</color>
+
+    <color name="blue">#0085d0</color>
+
+    <color name="light_blue">#6CB7FC</color>
+
+    <color name="tomato">#FF6347</color><!--西红柿色 -->
+
+
+    <color name="line">#dfdfdf</color>
+
+    <color name="white">@android:color/white</color>
+
+    <color name="gray_cc">#cccccc</color><!--灰色cc -->
+
+    <color name="gray">#808080</color>
+
+    <color name="text">#999999</color>
+
+    <color name="gray_8f">#8f8f8f</color><!--灰色8f -->
+
+    <color name="moonlight">#88000000</color>
+
+    <color name="black">@android:color/black</color>
+
+    <color name="tv_card_type_title_un">#ee0000</color>
+    <color name="tv_card_type_title_act">#00a1e2</color>
+    <color name="green_ticket">#00ab5b</color><!--绿色 -->
+
+    <color name="mediumturquoise">#48D1CC</color><!--中绿宝石 -->
+
+    <color name="sienna">#A0522D</color><!--赭色 -->
+
+
+</resources>

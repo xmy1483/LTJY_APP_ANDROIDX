@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BacAppTheme" parent="AppTheme">
+
+    </style>
+
+    <!-- 沉浸式状态栏-->
+    <style name="NoStaNoNavAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@android:color/transparent</item>
+
+        <item name="android:screenOrientation">portrait</item>
+
+        <!--透明状态栏 会有灰色的覆盖条-->
+        <!--<item name="android:windowTranslucentStatus">true</item>-->
+        <!--透明导航栏-->
+
+        <!--使状态栏，导航栏可绘制-->
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+
+    </style>
+</resources>

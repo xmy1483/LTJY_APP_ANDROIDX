@@ -1,0 +1,115 @@
+//def b = bihupapaLib.toBoolean()
+def b = rootProject.ext.bihupapaLib
+
+if (b) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+apply plugin: 'com.google.protobuf'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+
+        if (!b) {
+            // release
+            applicationId "com.bac.bihupapa"
+        }
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.bihupapaVersionCode
+        versionName rootProject.ext.bihupapaVersionName
+
+        if(rootProject.ext.test){
+            buildConfigField "String", "URL", rootProject.ext.debugUrl
+
+        }else{
+            buildConfigField "String", "URL", rootProject.ext.releaseUrl
+        }
+
+        buildConfigField "String", "appKeySeed", "\"0\""
+        buildConfigField "String", "appKeySeed2", "\"0123456780123\""
+        buildConfigField "String", "XX","\"1\""
+
+        buildConfigField "String", "wxPrefix", "\"\\u0019\\u0016^X[\""
+        buildConfigField "String", "wxPostfix", "\"VX[\\b\\u000B\\bY\\u000F\\\\^\""
+
+        ndk{
+            abiFilters "x86"
+            abiFilters "armeabi"
+        }
+    }
+    buildTypes {
+        release {
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            // shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //设置Key值
+            //manifestPlaceholders = [ AMAP_KEY:"ee20324fba1c7f4ad7a4a207e33d8e8d" ]
+        }
+    }
+
+    sourceSets {
+        main {
+            if (b) {
+                // lib
+                manifest.srcFile 'src/main/library/AndroidManifest.xml'
+                java.srcDirs += "src/main/library/java/"
+            } else {
+                // release
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                java.srcDirs += "src/main/release/java/"
+            }
+        }
+    }
+
+    resourcePrefix "bhpp_"
+    buildToolsVersion '28.0.3'
+}
+
+//转换工具
+protobuf {
+    protoc {
+        artifact = 'com.google.protobuf:protoc:3.4.0'
+    }
+    plugins {
+        javalite {
+            artifact = "com.google.protobuf:protoc-gen-javalite:3.0.0"
+        }
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.7.0' // CURRENT_GRPC_VERSION
+        }
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.plugins {
+                javalite {}
+                grpc {
+                    // Options added to --grpc_out
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':commonlib')
+    compile project(':weexlib')
+    compile project(':libzxing')
+    compile 'com.google.code.gson:gson:2.8.1'
+
+//grpc
+    compile 'io.grpc:grpc-okhttp:1.7.+' // CURRENT_GRPC_VERSION
+    compile 'io.grpc:grpc-protobuf-lite:1.7.+' // CURRENT_GRPC_VERSION
+    compile 'io.grpc:grpc-stub:1.7.+' // CURRENT_GRPC_VERSION
+    compile 'javax.annotation:javax.annotation-api:1.2'
+}

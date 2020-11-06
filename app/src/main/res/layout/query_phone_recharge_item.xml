@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:paddingBottom="4dp"
+              android:paddingLeft="8dp"
+              android:paddingRight="8dp"
+              android:paddingTop="4dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/ll_query_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/tv_phonerecharge_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥50"
+            android:textColor="#faa047"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:id="@+id/tv_phonerecharge_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="话费充值"
+            android:textColor="@color/gray"
+            android:textSize="14sp"/>
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_phonerecharge_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="22sp"/>
+
+            <TextView
+                android:id="@+id/tv_phonerecharge_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="2016.8.4 19:56"
+                android:textColor="@color/gray"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <TextView
+            android:id="@+id/tv_phonerecharge_domain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(中国移动)"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_phonerecharge_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="支付宝"
+            android:textColor="@color/gray"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+</LinearLayout>

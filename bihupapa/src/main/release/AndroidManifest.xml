@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- release 有启动选项-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bac.bihupapa">
+
+    <application
+
+
+
+        android:supportsRtl="true"
+        android:name="com.bac.bihupapa.ReleaseApplication"
+        >
+        <activity android:name=".activity.BhppSplashActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.wjz.weexlib.weex.activity.WeexActivity2">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <action android:name="com.alibaba.weex.protocol.openurl"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="com.taobao.android.intent.category.WEEX"/>
+
+                <data android:scheme="http"/>
+                <data android:scheme="https"/>
+                <data android:scheme="file"/>
+                <data android:scheme="bac"/>
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>

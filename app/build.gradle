@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.neenbedankt.android-apt'
+android {
+    signingConfigs {
+        config {
+            keyAlias 'appkey'
+            keyPassword 'wang1125'
+//            storeFile file('/Users/wujiazhen/Desktop/AndroidStudioProjects/BacPlatform/bac3/bac')
+            storeFile file('D:/bac')
+            storePassword 'wang1125'
+        }
+    }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.bac.bacplatform"
+
+        if (rootProject.ext.test) {
+            applicationIdSuffix ".test"
+            manifestPlaceholders = [APP_NAME      : "骆驼加油测试",
+                                    APP_ICON      : "@mipmap/ic_launcher_test",
+                                    APP_ROUND_ICON: "@mipmap/ic_launcher_round_test"
+            ]
+
+            buildConfigField "String", "URL", rootProject.ext.debugUrl
+
+        } else {
+            manifestPlaceholders = [APP_NAME      : "骆驼加油",
+                                    APP_ICON      : "@mipmap/ic_launcher",
+                                    APP_ROUND_ICON: "@mipmap/ic_launcher_round"
+            ]
+
+            buildConfigField "String", "URL", rootProject.ext.releaseUrl
+        }
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode rootProject.ext.bacVersionCode
+        versionName rootProject.ext.bacVersionName
+
+        buildConfigField "String", "appKeySeed", "\"0\""
+        buildConfigField "String", "appKeySeed2", "\"0123456780123\""
+        buildConfigField "String", "appKeyMid", "\"XYVW\""
+
+        buildConfigField "String", "wxPrefix", "\"\\u0019\\u0016^X[\""
+        buildConfigField "String", "wxPostfix", "\"VX[\\b\\u000B\\bY\\u000F\\\\^\""
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    defaultConfig{
+        ndk{
+            abiFilters "x86"
+            abiFilters "x86_64"
+            abiFilters "armeabi-v7a"
+            abiFilters "arm64-v8a"
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    lintOptions {
+        //即使有lint报错也不停止打包
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    buildToolsVersion '28.0.3'
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    if (bihupapaLib.toBoolean()) {
+        // lib
+        compile project(':bihupapa')
+    } else {
+        // release
+        compile project(':commonlib')
+        compile project(':weexlib')
+    }
+    implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'androidx.multidex:multidex:2.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation files('libs/UPPayAssistEx.jar')
+    implementation files('libs/UPPayPluginExPro.jar')
+    implementation project(path: ':flutter')
+}

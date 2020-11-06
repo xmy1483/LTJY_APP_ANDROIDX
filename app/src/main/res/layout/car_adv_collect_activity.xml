@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:bac="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/shape_stroke_solid_corners_white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="4dp"
+                    android:paddingRight="4dp"
+                    android:text="车辆牌照号"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="苏"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <com.bac.bacplatform.view.CanClearEditText
+                    android:id="@+id/ccet_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:background="@null"
+                    android:hint="请输入车牌号码"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray_cc"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <com.bac.bacplatform.view.RatioLayout
+                android:id="@+id/ral_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                bac:picRatio="1.6"
+                bac:relative="width"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_insurance_upload_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_01"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:padding="12dp"
+                    android:src="@mipmap/container_cancel"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#22000000"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/pb_01"
+                        style="@style/Widget.AppCompat.ProgressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+            </com.bac.bacplatform.view.RatioLayout>
+
+            <com.bac.bacplatform.view.RatioLayout
+                android:id="@+id/ral_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                bac:picRatio="1.6"
+                bac:relative="width"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_insurance_upload_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+                <ImageView
+                    android:id="@+id/iv_02"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="right"
+                    android:layout_margin="8dp"
+                    android:padding="12dp"
+                    android:src="@mipmap/container_cancel"/>
+
+                <FrameLayout
+                    android:id="@+id/fl_02"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#22000000"
+                    android:visibility="gone">
+
+                    <ProgressBar
+                        android:id="@+id/pb_02"
+                        style="@style/Widget.AppCompat.ProgressBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center" />
+                </FrameLayout>
+            </com.bac.bacplatform.view.RatioLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_margin="8dp"
+                android:drawableLeft="@mipmap/car_alert"
+                android:drawablePadding="4dp"
+                android:text="请确保照片内广告清晰可见"
+                android:textColor="@color/gray_8f"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_pic_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
+
+</LinearLayout>
