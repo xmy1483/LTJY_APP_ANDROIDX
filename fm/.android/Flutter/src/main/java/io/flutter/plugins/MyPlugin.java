@@ -1,6 +1,7 @@
 package io.flutter.plugins;
 
 import android.app.AlertDialog;
+import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 import android.widget.Toast;
@@ -8,6 +9,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.bac.bihupapa.LibApplication;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
@@ -22,8 +26,8 @@ import io.flutter.plugins.model.CashCardModel;
  */
 public class MyPlugin implements FlutterPlugin, MethodChannel.MethodCallHandler, ActivityAware {
     private MethodChannel channel;
-    public static String C_NAME ="globalChannel";
-    private Context context;
+    public static String C_NAME = "globalChannel";
+    private Context contextaa;
 
 /*
     /// 保留旧版本的兼容
@@ -36,41 +40,46 @@ public class MyPlugin implements FlutterPlugin, MethodChannel.MethodCallHandler,
 
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
-        Log.d("XmyLog", "onAttachedToEngine: ");
-        channel = new MethodChannel(binding.getBinaryMessenger(),C_NAME);
+        Log.d("XmyLog123", "onAttachedToEngine: ");
+        channel = new MethodChannel(binding.getBinaryMessenger(), C_NAME);
         channel.setMethodCallHandler(new MyPlugin());
-        context = binding.getApplicationContext();
+//        context = binding.getApplicationContext();
     }
 
     @Override
     public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
-        Log.d("XmyLog", "onDetachedFromEngine: ");
+        Log.d("XmyLog123", "onDetachedFromEngine: ");
     }
 
     @Override
     public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
-        Log.d("XmyLog", "onAttachedToActivity: ");
+        Log.d("XmyLog123", "onAttachedToActivity: ");
+        ContextHolder.getHolder().setContext(binding.getActivity());
     }
 
     @Override
     public void onDetachedFromActivityForConfigChanges() {
-        Log.d("XmyLog", "onDetachedFromActivityForConfigChanges: ");
+        Log.d("XmyLog123", "onDetachedFromActivityForConfigChanges: ");
     }
 
     @Override
     public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
-        Log.d("XmyLog", "onReattachedToActivityForConfigChanges: ");
+        Log.d("XmyLog123", "onReattachedToActivityForConfigChanges: ");
     }
 
     @Override
     public void onDetachedFromActivity() {
-        Log.d("XmyLog", "onDetachedFromActivity: ");
+        Log.d("XmyLog123", "onDetachedFromActivity: ");
     }
 
     @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull MethodChannel.Result result) {
-        if(call.method.equals("getCashCardListData")) {
+        if (call.method.equals("getCashCardListData")) {
             result.success(CashCardModel.getCashCardListData());
+        } else if (call.method.equals("showToast")) {
+            String s = call.argument("msg");
+            Toast.makeText(ContextHolder.getHolder().getContext(), s, Toast.LENGTH_SHORT).show();
+            result.success("");
         } else {
             result.success(CashCardModel.getTestStr());
         }

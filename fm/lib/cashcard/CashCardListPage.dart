@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -185,11 +186,15 @@ class CardItemView extends StatelessWidget {
     );
   }
 
-  _onItemClick() {
+  _onItemClick() async{
     print("点击了：" + price);
+    const platform = const MethodChannel('globalChannel');
+
+    var pm = <String,String>{"msg":"msgStr"};
+    String result = await platform.invokeMethod("showToast",pm);
     Navigator.push(context, MaterialPageRoute(builder: (_) {
       return new CashCardDetailPage(
-        paramPrice: 123.123,
+        paramPrice: double.parse(price),
       );
     }));
   }

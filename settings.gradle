@@ -2,6 +2,8 @@ include ':app', ':rxbaclib', ':bihupapa', ':commonlib', ':weexlib', ':bacinnerma
 setBinding(new Binding([gradle: this]))
 evaluate(new File(
   settingsDir,
-  'flutter_md/.android/include_flutter.groovy'
+  'fm/.android/include_flutter.groovy'
 ))
 
+
+include ':fm'

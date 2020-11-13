@@ -191,30 +191,7 @@ public class UIUtils {
     }
 
 
-    static boolean is = true;
     public static Drawable getDrawable(Context context, int resId, int dp){
-        if(is)
-            return new Drawable() {
-                @Override
-                public void draw(@NonNull Canvas canvas) {
-
-                }
-
-                @Override
-                public void setAlpha(int i) {
-
-                }
-
-                @Override
-                public void setColorFilter(@Nullable ColorFilter colorFilter) {
-
-                }
-
-                @Override
-                public int getOpacity() {
-                    return PixelFormat.TRANSLUCENT;
-                }
-            };
         Drawable drawable = context.getDrawable(resId);
         if(drawable == null){
             return null;

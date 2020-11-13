@@ -1,9 +1,11 @@
 package io.flutter.plugins.model;
 
+import android.text.TextUtils;
 import android.util.Log;
-
+import android.widget.Toast;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import io.flutter.plugins.ContextHolder;
 
 public class CashCardModel {
 
@@ -53,5 +55,11 @@ public class CashCardModel {
         data.put("age","23");
         System.out.println("j.toJSONString() = " + j.toJSONString());
         return j.toJSONString();
+    }
+
+    public void toast(String msg) {
+        if(!TextUtils.isEmpty(msg)){
+            Toast.makeText(ContextHolder.getHolder().getContext(), msg, Toast.LENGTH_SHORT).show();
+        }
     }
 }

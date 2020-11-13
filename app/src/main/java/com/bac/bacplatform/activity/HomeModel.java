@@ -90,7 +90,7 @@ public class HomeModel {
         new GrpcTask(null, method, null, new TaskPostExecute() {
             @Override
             public void onPostExecute(Method result) {
-                Log.d("XmyLog1212", "onPostExecute: "+JSON.toJSONString(result));
+//                Log.d("XmyLog1212", "onPostExecute: "+JSON.toJSONString(result));
                 if(result.getErrorId() != 0){
                     return;
                 }

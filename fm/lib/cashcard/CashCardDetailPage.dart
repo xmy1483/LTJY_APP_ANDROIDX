@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:fm/common/ActionBar.dart';
 import 'package:fm/common/CardViewCollection.dart';
 
@@ -113,10 +114,11 @@ class BottomPayState extends State<BottomPayView> {
     );
   }
 
-  _submitOrder() {
-    print("支付了");
-    setMoney("39874");
-    setCount("21");
+  _submitOrder() async{
+    print("点击支付：");
+
+
+
   }
 }
 
