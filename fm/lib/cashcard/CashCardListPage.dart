@@ -13,12 +13,10 @@ import 'CashCardDetailPage.dart';
 class CashCardListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
+    return Scaffold(
         backgroundColor: Color.fromRGBO(232, 232, 232, 1),
         body: BodyView(),
-      ),
-    );
+      );
   }
 }
 
@@ -136,7 +134,7 @@ class CardItemView extends StatelessWidget {
                     ),
                     Text(
                       "现货包邮，支持持中国石化1000元加油卡，中国石化是什么没听说过",
-                      overflow: TextOverflow.fade,
+                      overflow: TextOverflow.ellipsis,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:fm/address/CreateNewAddress.dart';
 import 'package:fm/cashcard/CashCardListPage.dart';
+import 'package:fm/user/UserCenter.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-//      home: CashCardListView(),
       home: CashCardListPage(),
+      routes: <String,WidgetBuilder>{
+        "/userCenter": (pms)=> UserCenterPage(),
+      },
     );
   }
 }

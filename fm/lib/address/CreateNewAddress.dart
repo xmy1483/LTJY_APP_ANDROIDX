@@ -10,12 +10,10 @@ import 'package:fm/common/ActionBar.dart';
 class CreateNewAddressPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
+    return Scaffold(
         backgroundColor: Colors.white,
         body: BodyView(),
-      ),
-    );
+      );
   }
 }
 

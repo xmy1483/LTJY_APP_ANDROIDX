@@ -4,23 +4,23 @@ import 'package:flutter/material.dart';
 class UserCenterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
+    return Scaffold(
         backgroundColor: Color.fromRGBO(232, 232, 232, 1),
         body: BodyView(),
-      ),
-    );
+      );
   }
 }
 
 class BodyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        BlueHeader(),
-        OptionsList(),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          BlueHeader(),
+          OptionsList(),
+        ],
+      ),
     );
   }
 }
@@ -119,7 +119,7 @@ class HeaderState extends State<BlueHeader> {
           ],
         ),
       ),
-      margin: EdgeInsets.only(top: 30),
+      // margin: EdgeInsets.only(top: 30),
       padding: EdgeInsets.only(left: 10,right: 10,top: 20,bottom: 10),
 //      color: Colors.lightGreen,
       width: MediaQuery.of(context).size.width,

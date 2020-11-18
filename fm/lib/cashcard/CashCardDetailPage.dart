@@ -16,12 +16,10 @@ class CashCardDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     cardPrice = this.paramPrice;
     print(cardPrice.toString());
-    return new MaterialApp(
-      home: new Scaffold(
+    return Scaffold(
         backgroundColor: Color.fromRGBO(232, 232, 232, 1),
         body: BodyView(),
-      ),
-    );
+      );
   }
 }
 

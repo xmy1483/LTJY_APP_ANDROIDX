@@ -3,14 +3,20 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <FrameLayout
-        android:id="@+id/fl"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-     >
+        android:layout_weight="1">
+        <FrameLayout
+            android:id="@+id/fl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
+        <io.flutter.embedding.android.FlutterView
+            android:background="#fff"
+            android:id="@+id/flutter_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </FrameLayout>
 
     <View

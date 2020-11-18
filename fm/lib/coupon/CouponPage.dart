@@ -5,12 +5,10 @@ import 'package:fm/common/CardViewCollection.dart';
 class CouponPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
+    return Scaffold(
         backgroundColor: Color.fromRGBO(232, 232, 232, 1),
         body: BodyView(),
-      ),
-    );
+      );
   }
 }
 

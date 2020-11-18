@@ -13,6 +13,8 @@ import com.bac.bihupapa.LibApplication;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import io.flutter.embedding.android.FlutterActivity;
+import io.flutter.embedding.engine.FlutterEngine;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
@@ -43,7 +45,7 @@ public class MyPlugin implements FlutterPlugin, MethodChannel.MethodCallHandler,
         Log.d("XmyLog123", "onAttachedToEngine: ");
         channel = new MethodChannel(binding.getBinaryMessenger(), C_NAME);
         channel.setMethodCallHandler(new MyPlugin());
-//        context = binding.getApplicationContext();
+//        context = binding.getApplicationContext();;
     }
 
     @Override
